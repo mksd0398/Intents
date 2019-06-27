@@ -2,7 +2,7 @@ package com.example.intents
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -13,7 +13,10 @@ class SecondActivity : AppCompatActivity() {
 
     private lateinit var mTvMessage : TextView
     private lateinit var mBtnJump : Button
-    private lateinit var mEtName : EditText
+    private lateinit var mEtPlace: EditText
+    private lateinit var mTvActivityName: TextView
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -22,7 +25,7 @@ class SecondActivity : AppCompatActivity() {
         mInitObjects()
         val msg:String? = intent.getStringExtra("message")
 
-        mEtName.setText(msg)
+        mEtPlace.setText(msg)
         if(msg == null){
             mTvMessage.text = String.format(getString(R.string.hey))
         }else{
@@ -30,28 +33,28 @@ class SecondActivity : AppCompatActivity() {
         }
 
         mBtnJump.setOnClickListener{
-            val msg: String = mEtName.text.toString().trim()
+            val msg: String = mEtPlace.text.toString().trim()
             if(msg.isEmpty()){
                 Toast.makeText(applicationContext , "please enter something!!" , Toast.LENGTH_SHORT).show()
             }else{
                 val intentToMainActivity = Intent(applicationContext, MainActivity::class.java)
+
                 intentToMainActivity.putExtra("message", msg)
-                startActivity(intentToMainActivity)
+                setResult(RESULT_OK, intentToMainActivity)
                 finish()
             }
         }
-
     }
 
     private fun mInitObjects() {
-
+        mTvActivityName.text = "Second Activity"
     }
 
     private fun mInitWidgets() {
         mTvMessage = findViewById(R.id.xTvMessage)
         mBtnJump = findViewById(R.id.xBtnJump)
-        mEtName = findViewById(R.id.xEtName)
+        mEtPlace = findViewById(R.id.xEtPlace)
+        mTvActivityName = findViewById(R.id.xTvActivityName)
     }
-
 
 }

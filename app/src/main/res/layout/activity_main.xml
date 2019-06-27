@@ -11,7 +11,14 @@
     android:padding="15dp"
     tools:context=".MainActivity">
 
-
+    <TextView
+        android:id="@+id/xTvActivityName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size"
+        app:fontFamily="sans-serif-black" />
     <TextView
         android:id="@+id/xTvMessage"
         android:layout_width="match_parent"
@@ -24,10 +31,19 @@
 
     <EditText
         android:id="@+id/xEtName"
+        android:visibility="gone"
+        android:saveEnabled="true"
         style="@style/editTextStyleBorderRed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/name" />
+
+    <EditText
+        android:id="@+id/xEtPlace"
+        style="@style/editTextStyleBorderRed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/place" />
 
     <Button
         android:id="@+id/xBtnJump"
