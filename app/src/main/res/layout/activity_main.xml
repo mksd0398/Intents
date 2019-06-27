@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="15dp"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/xTvMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hey_all"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size"
+        app:fontFamily="sans-serif-black" />
+
+    <EditText
+        android:id="@+id/xEtName"
+        style="@style/editTextStyleBorderRed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/name" />
+
+    <Button
+        android:id="@+id/xBtnJump"
+        style="@style/buttonTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/jump" />
+</LinearLayout>
